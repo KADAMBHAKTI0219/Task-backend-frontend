@@ -12,7 +12,7 @@ const Product = () => {
     },[])
 
     const handleDelete = (id)=>{
-      axios.delete(`http://localhost:3000/productData/delete/${id}`)
+      axios.delete(`http://localhost:5000/productData/delete/${id}`)
       .then(res=>(
         alert("Data Deleted Successfully"),
         dispatch(GetProductData)
@@ -23,7 +23,6 @@ const Product = () => {
   return isload ? <h1>Loading......</h1> : iserror ? <h1>Something Went Wrong... </h1> : (
     <div>
       <h1 style={{textAlign:"center"}}>Products</h1>
-      <Link to={`/addProduct`}>Add Product</Link>
       <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-between"}}>
     { product.map((el,index)=>(
             <div key={index} style={{width:"300px",height:"300px"}}>

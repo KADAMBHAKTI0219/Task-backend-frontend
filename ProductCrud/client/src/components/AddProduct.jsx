@@ -15,7 +15,7 @@ const AddProduct = () => {
     const {title,price,description} = formData
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3000/productData/create',formData).then(res=>{
+        axios.post('http://localhost:5000/productData/create',formData).then(res=>{
             console.log(res.data.data)
         }).catch(err=>console.log(err))
     }

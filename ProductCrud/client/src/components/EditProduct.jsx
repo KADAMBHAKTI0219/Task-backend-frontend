@@ -18,7 +18,7 @@ const EditProduct = () => {
     const { title, price, description } = formData;
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/productData/get/${id}`)
+        axios.get(`http://localhost:5000/productData/get/${id}`)
             .then((res) => {
                 setFormData(res.data.data);
                 setLoading(false);
@@ -35,7 +35,7 @@ const EditProduct = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:3000/productData/update/${id}`, formData)
+        axios.put(`http://localhost:5000/productData/update/${id}`, formData)
             .then((res) => {
                 setFormData(res.data.data);
                 alert('Product updated successfully!');
